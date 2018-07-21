@@ -1,0 +1,145 @@
+
+==================== FINAL INTERFACE ====================
+2018-07-16 18:24:01.574241459 UTC
+
+interface AdventOfCode-0.1.0.0-1QroZf6sskt24KCEY4pRmf:Advent2015_1 8002
+  interface hash: 8da3e267af89ea88eb8c9a337bee7751
+  ABI hash: 699e1ef57d47651c0eff3d349ddcdbfb
+  export-list hash: 6d2822d661bbe1c3c0280aefa233b184
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 86fe76d013d7e8c462b0a5107b35fe37
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Advent2015_1.add
+  Advent2015_1.addOrMinus
+  Advent2015_1.floors''
+  Advent2015_1.minus
+  Advent2015_1.partialAdd
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+6e14b262b9d033870d8604e6e026c894
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Advent2015_1.$trModule2
+                   Advent2015_1.$trModule1) -}
+1f8df0522fd0885bc0308b8f56562541
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Advent2015_1"#) -}
+5eec7929f0b94cc2188d3a1d906edbf9
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "AdventOfCode-0.1.0.0-1QroZf6sskt24KCEY4pRmf"#) -}
+579fd96498e642dccb1e594bfe103e34
+  add :: GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n :: GHC.Types.Int) ->
+                 case n of wild { GHC.Types.I# x ->
+                 GHC.Types.I# (GHC.Prim.+# x 1#) }) -}
+ac6c0fce9f4b82aa2449d7eda5393fe1
+  addOrMinus ::
+    GHC.Types.Char
+    -> [GHC.Types.Int -> GHC.Types.Int]
+    -> [GHC.Types.Int -> GHC.Types.Int]
+  {- Arity: 2, Strictness: <L,1*U(1*U)><S,1*U>m2,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: GHC.Types.Char)
+                   (ds1 :: [GHC.Types.Int -> GHC.Types.Int]) ->
+                 case ds1 of wild {
+                   [] -> Advent2015_1.addOrMinus2
+                   : ipv ipv1
+                   -> case ds of wild1 { GHC.Types.C# ds2 ->
+                      case ds2 of ds3 {
+                        DEFAULT -> Advent2015_1.addOrMinus1
+                        '('#
+                        -> GHC.Types.:
+                             @ (GHC.Types.Int -> GHC.Types.Int)
+                             Advent2015_1.add
+                             wild
+                        ')'#
+                        -> GHC.Types.:
+                             @ (GHC.Types.Int -> GHC.Types.Int)
+                             Advent2015_1.minus
+                             wild } } }) -}
+7b42c3c8b87bd8578da17f4574ea03ca
+  addOrMinus1 :: [GHC.Types.Int -> GHC.Types.Int]
+  {- Strictness: x -}
+8962c210fa6af6d32c3c7e25811ca857
+  addOrMinus2 :: [GHC.Types.Int -> GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.Int -> GHC.Types.Int)
+                   Advent2015_1.addOrMinus3
+                   (GHC.Types.[] @ (GHC.Types.Int -> GHC.Types.Int))) -}
+9d123aa0ed662eaf7d33bd036981464c
+  addOrMinus3 :: GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U)>m,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: GHC.Types.Int) -> ds) -}
+98ba787a4ee18537b39e586993f2b950
+  floors'' :: [GHC.Types.Char] -> [GHC.Types.Int -> GHC.Types.Int]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: [GHC.Types.Char]) ->
+                 case ds of wild {
+                   [] -> Advent2015_1.addOrMinus2
+                   : x xs -> Advent2015_1.floors''1 }) -}
+e60c4a3971b58c055e142f71ce79601e
+  floors''1 :: [GHC.Types.Int -> GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.Int -> GHC.Types.Int)
+                   Advent2015_1.add
+                   Advent2015_1.floors''2) -}
+88569e9164d45e69fe2807393eb7e8c0
+  floors''2 :: [GHC.Types.Int -> GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.Int -> GHC.Types.Int)
+                   Advent2015_1.floors''3
+                   (GHC.Types.[] @ (GHC.Types.Int -> GHC.Types.Int))) -}
+780ebca19c106f930711e43f2c852107
+  floors''3 :: GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds1 :: GHC.Types.Int) ->
+                 case ds1 of wild1 { GHC.Types.I# y ->
+                 GHC.Types.I# (GHC.Prim.-# 1# y) }) -}
+091a7288da995715edea1fa40b2c970d
+  minus :: GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n :: GHC.Types.Int) ->
+                 case n of wild { GHC.Types.I# x ->
+                 GHC.Types.I# (GHC.Prim.-# x 1#) }) -}
+4027912942b2cf99f56bb440d00976f7
+  partialAdd :: (GHC.Types.Int -> GHC.Types.Int) -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <C(S),1*C1(U(U))>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (n :: GHC.Types.Int -> GHC.Types.Int) ->
+                 n Advent2015_1.partialAdd1) -}
+41971f9c22110f8d8713b5ed8ad1c0f5
+  partialAdd1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
