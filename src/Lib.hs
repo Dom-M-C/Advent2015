@@ -12,6 +12,7 @@ module Lib
 
 import Lib.Prelude
 import Advent2015_1
+import Advent2015_2
 
 -- | Prints someFunc
 --
