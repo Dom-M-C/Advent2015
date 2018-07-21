@@ -16,14 +16,10 @@ floorSum  (x:xs) = foldl (+) x xs
 floorIndex :: [(Int -> Int)] -> [(Int, Int)]
 floorIndex = undefined--foldr . map (\x n -> (n + 1, x))
 
-length' (x:xs) = undefined
-
 floors'' ::  (Int, [Int]) -> Int -> Int
 floors'' (_, []) n = 0
 floors''  (i, xs) (-1) = i
 floors''  (i, (x:xs)) n = floors'' (i  + 1, xs) (x + n)
-
---(floors'' (i + 1, (xs)) (n + x))
 
 floors :: [Char] -> Int
 floors (c:cs) = undefined

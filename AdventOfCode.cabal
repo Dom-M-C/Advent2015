@@ -19,8 +19,9 @@ library
   exposed-modules:     Lib
   other-modules:       Lib.Prelude
   build-depends:       base >= 4.7 && < 5
-                     , protolude >= 0.1.6 && < 0.2
-                     , split >= 0.2.3.2 && < 0.2.3.3
+                     ,  split >= 0.2.2.0 && < 0.5.3.3
+                     ,  protolude >= 0.1.10 && < 0.2.2
+                     ,  unordered-containers >= 0.2.8.0 && < 0.3.0.0
   default-language:    Haskell2010
   default-extensions:  OverloadedStrings, NoImplicitPrelude
 
@@ -30,7 +31,7 @@ executable AdventOfCode-exe
   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , AdventOfCode
-                     , protolude >= 0.1.6 && < 0.2
+                     ,  protolude >= 0.1.6 && < 0.4
   default-language:    Haskell2010
   default-extensions:  OverloadedStrings, NoImplicitPrelude
 
@@ -40,7 +41,7 @@ test-suite AdventOfCode-test
   main-is:             Spec.hs
   build-depends:       base
                      , AdventOfCode
-                     , protolude >= 0.1.6 && < 0.2
+                     ,  protolude >= 0.1.6 && < 0.4
   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
   default-extensions:  OverloadedStrings, NoImplicitPrelude
