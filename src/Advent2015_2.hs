@@ -31,6 +31,26 @@ sumSides x =
         h = getDim Height x
     in l + w + h + ((min (min l w) h) `div` 2)
 
+ribbonLength :: PresentDim -> Int
+ribbonLength x =
+    let l = getDim Length x
+        w = getDim Width x
+        h = getDim Height x
+        sortedFaces =  sort [w, l, h]
+        firstFace = sortedFaces !! 0
+        secondFace = sortedFaces !! 1
+        double = replicate 2
+        product = l*w*h
+        perimiters = (double firstFace) ++ (double  secondFace)
+        perimiterLength = foldl (+) 0 perimiters
+    in  perimiterLength + product
+
+totalRibbonLength :: [PresentDim] -> Int
+totalRibbonLength (x:xs) =
+    let
+        mappedLength = map ribbonLength (x:xs)
+    in foldl (+) 0 mappedLength
+
 findTotal :: [PresentDim] -> Int
 findTotal [] = 0
 findTotal (p:ps) = (sumSides $ presentArea p) + findTotal ps
@@ -56,6 +76,8 @@ parseListToDim cs
 
 parseTotal :: [[Char]] -> Int
 parseTotal = findTotal . parseInput
+
+parseRibbons = totalRibbonLength . parseInput
 
 
 withInput =splitOn ","  "3x11x24 \
