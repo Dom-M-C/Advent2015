@@ -21,9 +21,7 @@ length' (x:xs) = undefined
 floors'' ::  (Int, [Int]) -> Int -> Int
 floors'' (_, []) n = 0
 floors''  (i, xs) (-1) = i
---floors''  (i, (x:xs)) n = floors'' (i + 1, (xs)) (n + x)
-floors''  (i, (x:xs)) n = floors'' (fst res, ((snd res ): [0])) (snd res)
-    where res = foldl (\ acc (k, j) -> (k + 1,  (snd acc) + j)) (0, x) (i, xs)
+floors''  (i, (x:xs)) n = floors'' (i  + 1, xs) (x + n)
 
 --(floors'' (i + 1, (xs)) (n + x))
 
