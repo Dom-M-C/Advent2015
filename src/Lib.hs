@@ -14,8 +14,6 @@ import Lib.Prelude
 
 import Advent2015_3
 
-ad3f :: InfiniteGrid -> Int
-ad3f _ = 1
 
 -- | Prints someFunc
 --

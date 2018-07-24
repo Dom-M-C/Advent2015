@@ -1,16 +1,51 @@
 module Advent2015_3 where
 
 import Protolude
-import Data.HashMap.Lazy as M
+import Data.Maybe
+import Data.HashMap.Lazy (HashMap)
+import qualified Data.HashMap.Lazy as Map
 
-data InfiniteGrid = Cell
-    {  xPos :: Int
-    ,   yPos :: Int
-    ,   visits :: Int
-    }   deriving(Show)
+data Direction = None | North | East | South | West deriving(Show)
 
---data Moves = Initial | North |
+data Move
+    = Reset { initial :: Key } --Initial move, resets visits
+    | Normal { current :: Key, direction :: Direction }
+    deriving(Show)
 
-mapTest = M.map
+type    XPos = Int
+type    YPos = Int
+type    Key = (XPos, YPos)
+type    Visits = Int
+type    Grid = HashMap Key Visits
+
+generateKeys :: [(Key, Visits)]
+generateKeys = [((x, y), 0) | x <- [1..], y <- [1..]]
+
+updateVisits :: Key -> Grid -> Grid
+--updateVisits = undefined
+updateVisits key grid = Map.insertWith (\x y -> (y+1)) key v grid
+    where   lkv = Map.lookup key grid
+            --v = maybe 0 (x -> x) lkv
+            v = fromMaybe 0 lkv
+
+
+--move :: Move -> Key
+move (Reset _) = Reset { initial = (0, 0) }
+move m = undefined
+
+mapDirectionToMove :: Direction -> Key
+mapDirectionToMove d = case d of
+    None -> (0, 0)
+    North -> (0, 1)
+    East -> (1, 0)
+    South -> (0, -1)
+    West -> (-1, 0)
+
+moveLoop :: [Direction] -> [Key]
+moveLoop [] = []
+moveLoop d = map mapDirectionToMove d
+
+
+
+mapTest = Map.fromList generateKeys
 --testGrid = map (\(x, y) -> Cell x y 0) [(x, y) | x <- [1..25], y <- [1..10]]
-
